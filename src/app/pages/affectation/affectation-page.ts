@@ -18,6 +18,7 @@ import { AssignmentGraph } from '../../components/assignment-graph/assignment-gr
 import { InputPanel } from '../../components/input-panel/input-panel';
 import { Iteration } from '../../components/iteration/iteration';
 import { StepOne } from '../../components/step-one/step-one';
+import { ThemeToggle } from '../../components/theme-toggle/theme-toggle';
 import { AffectationInput, affectationSchema } from './affectation-form';
 
 const DEFAULT_DIM = 6;
@@ -29,7 +30,7 @@ const stepHeadingId = (index: number) => `step-${index}`;
 
 @Component({
   selector: 'app-affectation-page',
-  imports: [InputPanel, StepOne, Iteration, AssignmentGraph],
+  imports: [InputPanel, StepOne, Iteration, AssignmentGraph, ThemeToggle],
   templateUrl: './affectation-page.html',
   styleUrl: './affectation-page.scss',
 })

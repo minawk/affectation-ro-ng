@@ -1,0 +1,13 @@
+<button
+  type="button"
+  class="theme-toggle"
+  (click)="toggleTheme()"
+  [attr.aria-pressed]="isDark()"
+  [attr.aria-label]="isDark() ? lightLabel : darkLabel"
+>
+  @if (isDark()) {
+    <app-icon name="sun" />
+  } @else {
+    <app-icon name="moon" />
+  }
+</button>

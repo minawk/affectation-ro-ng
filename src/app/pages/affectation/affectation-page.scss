@@ -16,6 +16,13 @@
   .inputs {
     padding: 1rem 0.75rem;
 
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
     @include screen(1024px) {
       flex: none;
       overflow-y: auto;
