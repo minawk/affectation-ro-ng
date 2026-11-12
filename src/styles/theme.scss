@@ -1,0 +1,18 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #151412;
+  --color-accent: #1e5eae;
+  --color-focus: #1e5eae;
+  --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #12110f;
+    --color-text: #f6efe3;
+    --color-accent: #7eb0ea;
+    --color-focus: #7eb0ea;
+    color-scheme: dark;
+  }
+}
