@@ -5,7 +5,7 @@ import {
   MAX_VALUE,
   MIN_DIM,
   MIN_VALUE,
-} from '../../core/assignment/assignment.model';
+} from '../../core/models/assignment.model';
 
 export interface AffectationInput {
   dim: number | null;

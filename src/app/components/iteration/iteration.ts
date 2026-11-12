@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Iteration as IterationModel } from '../../core/assignment/assignment.model';
+import { Iteration as IterationModel } from '../../core/models/assignment.model';
 import { MatrixTable } from '../matrix-table/matrix-table';
 
 /** One iteration of Étapes 2, 3 and 4; only the first `visible` sub-steps are shown. */

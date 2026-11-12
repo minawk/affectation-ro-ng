@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { Assignment } from '../../core/assignment/assignment.model';
+import { Assignment } from '../../core/models/assignment.model';
 
 const PITCH = 45;
 

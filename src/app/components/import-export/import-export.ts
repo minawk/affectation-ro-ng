@@ -1,6 +1,6 @@
 import { Component, inject, input, output, signal } from '@angular/core';
-import { MatrixFileContent } from '../../core/assignment/matrix-file';
-import { MatrixFileService } from '../../core/assignment/matrix-file.service';
+import { MatrixFileContent } from '../../core/utils/matrix-file';
+import { MatrixFileService } from '../../core/services/matrix-file.service';
 
 /** Imports / exports the matrix as `matrix.json`. */
 @Component({

@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { Cell, CellMatrix } from '../../core/assignment/assignment.model';
+import { Cell, CellMatrix } from '../../core/models/assignment.model';
 
 /** Read-only display of a matrix with its optional margins (minimums or "+" marks). */
 @Component({

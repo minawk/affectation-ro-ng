@@ -7,7 +7,7 @@ import {
   MarkingResult,
   Solution,
   StepOneResult,
-} from './assignment.model';
+} from '../models/assignment.model';
 import { columnMins, invertForMax, rowMins, toCell, toCells } from './matrix.utils';
 
 export const MAX_ITERATIONS = 50;

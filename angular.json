@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-ssr-poc": {
+    "affectation-ro-ng": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -71,10 +71,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-ssr-poc:build:production"
+              "buildTarget": "affectation-ro-ng:build:production"
             },
             "development": {
-              "buildTarget": "angular-ssr-poc:build:development"
+              "buildTarget": "affectation-ro-ng:build:development"
             }
           },
           "defaultConfiguration": "development"

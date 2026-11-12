@@ -1,8 +1,8 @@
 import { Component, computed, input } from '@angular/core';
 import { FieldTree, FormField } from '@angular/forms/signals';
 
-import { MatrixFileContent } from '../../core/assignment/matrix-file';
-import { randomValues } from '../../core/assignment/matrix.utils';
+import { MatrixFileContent } from '../../core/utils/matrix-file';
+import { randomValues } from '../../core/utils/matrix.utils';
 import { AffectationInput } from '../../pages/affectation/affectation-form';
 import { ImportExport } from '../import-export/import-export';
 import { MatrixEditor } from '../matrix-editor/matrix-editor';

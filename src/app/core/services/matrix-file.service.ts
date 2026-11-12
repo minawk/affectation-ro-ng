@@ -5,7 +5,7 @@ import {
   parseMatrixFile,
   READ_ERROR_MESSAGE,
   serializeMatrixFile,
-} from './matrix-file';
+} from '../utils/matrix-file';
 
 /** Imports and exports the input matrix as a JSON file. */
 @Service()

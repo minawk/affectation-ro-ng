@@ -1,4 +1,4 @@
-import { Cell, CellMatrix, MAX_VALUE } from './assignment.model';
+import { Cell, CellMatrix, MAX_VALUE } from '../models/assignment.model';
 
 /** Column labels: 1..n (destinations). */
 export const createColumnLabels = (size: number): string[] =>

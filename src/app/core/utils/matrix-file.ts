@@ -1,4 +1,4 @@
-import { MAX_DIM, MAX_VALUE, MIN_DIM, MIN_VALUE } from './assignment.model';
+import { MAX_DIM, MAX_VALUE, MIN_DIM, MIN_VALUE } from '../models/assignment.model';
 
 export interface MatrixFileContent {
   readonly dim: number;

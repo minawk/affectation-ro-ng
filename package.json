@@ -1,14 +1,14 @@
 {
-  "name": "angular-ssr-poc",
+  "name": "affectation-ro-ng",
   "version": "0.0.1",
-  "description": "Angular SSR proof of concept",
+  "description": "Affectation Recherche Opérationnelle Min et Max (méthode hongroise)",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr": "node dist/angular-ssr-poc/server/server.mjs"
+    "serve:ssr": "node dist/affectation-ro-ng/server/server.mjs"
   },
   "private": true,
   "packageManager": "npm@11.13.0",

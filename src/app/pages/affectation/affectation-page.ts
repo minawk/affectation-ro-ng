@@ -11,13 +11,9 @@ import {
   untracked,
 } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { MAX_DIM, MIN_DIM, Solution } from '../../core/assignment/assignment.model';
-import { AssignmentSolverError, solveAssignment } from '../../core/assignment/hungarian-solver';
-import {
-  createColumnLabels,
-  createRowLabels,
-  createValues,
-} from '../../core/assignment/matrix.utils';
+import { MAX_DIM, MIN_DIM, Solution } from '../../core/models/assignment.model';
+import { AssignmentSolverError, solveAssignment } from '../../core/utils/hungarian-solver';
+import { createColumnLabels, createRowLabels, createValues } from '../../core/utils/matrix.utils';
 import { AssignmentGraph } from '../../components/assignment-graph/assignment-graph';
 import { InputPanel } from '../../components/input-panel/input-panel';
 import { Iteration } from '../../components/iteration/iteration';
