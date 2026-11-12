@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1.5rem;
+  margin-top: 1rem;
+
+  @include screen(768px) {
+    grid-template-columns: repeat(3, max-content);
+  }
+}

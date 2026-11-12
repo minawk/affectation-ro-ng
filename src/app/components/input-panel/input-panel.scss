@@ -1,0 +1,46 @@
+.input-panel {
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+
+    input {
+      width: 3.5rem;
+      min-height: 2rem;
+      padding: 0 0.25rem;
+      border: 1px solid var(--color-border);
+      border-radius: 0.25rem;
+      background: var(--color-bg);
+
+      &[aria-invalid='true'] {
+        border-color: var(--color-danger);
+      }
+    }
+
+    button {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .error {
+    margin: 0 0 0.5rem;
+    color: var(--color-danger);
+    font-size: 0.875rem;
+  }
+
+  .type {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    border: 0;
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+    }
+  }
+}

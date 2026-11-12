@@ -1,0 +1,34 @@
+<table class="matrix-editor">
+  <caption class="sr-only">
+    Matrice des coûts
+  </caption>
+  <thead>
+    <tr>
+      <td class="corner"></td>
+      @for (label of colLabels(); track $index) {
+        <th scope="col">{{ label }}</th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (rowLabel of rowLabels(); track $index; let y = $index) {
+      <tr>
+        <th scope="row">{{ rowLabel }}</th>
+        @for (colLabel of colLabels(); track $index; let x = $index) {
+          <td>
+            <input
+              type="number"
+              inputmode="numeric"
+              step="1"
+              [formField]="values()[y][x]"
+              [attr.aria-label]="'Ligne ' + rowLabel + ', colonne ' + colLabel"
+              [attr.aria-invalid]="values()[y][x]().invalid()"
+              [title]="values()[y][x]().errors()[0]?.message ?? ''"
+              (blur)="fillEmpty(values()[y][x])"
+            />
+          </td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>

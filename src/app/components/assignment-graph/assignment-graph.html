@@ -1,0 +1,33 @@
+<section class="graph" [attr.aria-labelledby]="headingId()">
+  <h2 [id]="headingId()" tabindex="-1">{{ title() }}</h2>
+  <svg
+    version="1.2"
+    role="img"
+    width="300"
+    [attr.height]="height()"
+    [attr.viewBox]="'0 0 300 ' + height()"
+    [attr.aria-label]="'Affectation ' + title() + ' : ' + description()"
+  >
+    <g class="edges">
+      @for (edge of edges(); track edge.id) {
+        <g class="edge">
+          <path [attr.id]="edge.id" [attr.d]="edge.d" />
+          <text>
+            <textPath [attr.href]="'#' + edge.id" startOffset="6%" dy="-5">
+              {{ edge.value }}
+            </textPath>
+          </text>
+        </g>
+      }
+    </g>
+    <g class="nodes">
+      @for (node of nodes(); track $index; let i = $index) {
+        <circle cx="50" [attr.cy]="node.cy" r="15" />
+        <text x="50" [attr.y]="node.textY" text-anchor="middle">{{ rowLabels()[i] }}</text>
+        <circle cx="250" [attr.cy]="node.cy" r="15" />
+        <text x="250" [attr.y]="node.textY" text-anchor="middle">{{ colLabels()[i] }}</text>
+      }
+    </g>
+  </svg>
+  <p class="total">= {{ total() }}</p>
+</section>

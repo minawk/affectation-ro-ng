@@ -1,0 +1,15 @@
+<div class="import-export">
+  <div class="actions">
+    <input
+      id="matrix-file"
+      class="sr-only file-input"
+      type="file"
+      accept=".json,application/json"
+      [attr.aria-describedby]="error() ? 'matrix-file-error' : null"
+      (change)="onFileChange($event)"
+    />
+    <label for="matrix-file" class="button">Importer</label>
+    <button type="button" [disabled]="!canExport()" (click)="onExport()">Exporter</button>
+  </div>
+  <p id="matrix-file-error" class="error" role="alert">{{ error() }}</p>
+</div>

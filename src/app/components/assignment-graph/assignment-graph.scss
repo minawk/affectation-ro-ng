@@ -1,0 +1,57 @@
+.graph {
+  width: 300px;
+  max-width: 100%;
+  margin: 1.5rem auto;
+
+  h2 {
+    text-align: center;
+  }
+
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+  }
+
+  .nodes {
+    circle {
+      fill: var(--color-bg);
+      stroke: var(--color-graph-node);
+      stroke-width: 2;
+    }
+
+    text {
+      fill: var(--color-text);
+      font-size: 18px;
+    }
+  }
+
+  .edge {
+    cursor: pointer;
+
+    path {
+      fill: none;
+      stroke: var(--color-graph-edge);
+      stroke-width: 3;
+    }
+
+    text {
+      fill: var(--color-text);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    &:hover {
+      path {
+        stroke: var(--color-graph-edge-hover);
+      }
+    }
+  }
+
+  .total {
+    margin: 0.25rem 0 0;
+    text-align: center;
+    font-weight: 600;
+  }
+}

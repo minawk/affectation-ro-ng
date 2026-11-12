@@ -1,0 +1,61 @@
+<table class="matrix-table">
+  <caption class="sr-only">
+    {{
+      caption()
+    }}
+  </caption>
+  <thead>
+    <tr>
+      <td class="corner"></td>
+      @for (label of colLabels(); track $index) {
+        <th scope="col" class="label">{{ label }}</th>
+      }
+      @if (hasSide()) {
+        <th scope="col" class="margin">
+          <span class="sr-only">{{ sideHeader() }}</span>
+        </th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of matrix(); track $index; let y = $index) {
+      <tr>
+        <th scope="row" class="label">{{ rowLabels()[y] }}</th>
+        @for (cell of row; track $index) {
+          <td
+            class="cell"
+            [class.framed]="cell.framed"
+            [class.crossed]="cell.crossed"
+            [class.zero]="highlightZeros() && cell.value === 0"
+            [class.single]="cell.tone === 'single'"
+            [class.double]="cell.tone === 'double'"
+            [class.uncovered-min]="cell.tone === 'uncovered-min'"
+          >
+            {{ cell.value }}
+            @if (stateText(cell); as state) {
+              <span class="sr-only">({{ state }})</span>
+            }
+          </td>
+        }
+        @if (hasSide()) {
+          <td class="margin" [class.min-value]="!!sideValues()">{{ sideText(y) }}</td>
+        }
+      </tr>
+    }
+  </tbody>
+  @if (hasBottom()) {
+    <tfoot>
+      <tr>
+        <th scope="row" class="margin">
+          <span class="sr-only">{{ bottomHeader() }}</span>
+        </th>
+        @for (label of colLabels(); track $index; let x = $index) {
+          <td class="margin" [class.min-value]="!!bottomValues()">{{ bottomText(x) }}</td>
+        }
+        @if (hasSide()) {
+          <td class="margin"></td>
+        }
+      </tr>
+    </tfoot>
+  }
+</table>

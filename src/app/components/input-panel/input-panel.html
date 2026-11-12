@@ -1,0 +1,39 @@
+<div class="input-panel">
+  <div class="actions">
+    <label for="dimension">Dimension :</label>
+    <input
+      id="dimension"
+      type="number"
+      inputmode="numeric"
+      step="1"
+      [formField]="form().dim"
+      [attr.aria-invalid]="form().dim().invalid()"
+      [attr.aria-describedby]="form().dim().invalid() ? 'dimension-error' : null"
+    />
+    <button type="button" (click)="fillRandom()">Aléatoire</button>
+  </div>
+  @if (form().dim().invalid()) {
+    <p id="dimension-error" class="error">{{ form().dim().errors()[0]?.message }}</p>
+  }
+
+  <app-matrix-editor [values]="form().values" [colLabels]="colLabels()" [rowLabels]="rowLabels()" />
+
+  <fieldset class="type">
+    <legend class="sr-only">Type d'affectation</legend>
+    <label>
+      <input type="radio" value="min" [formField]="form().type" />
+      Min
+    </label>
+    <label>
+      <input type="radio" value="max" [formField]="form().type" />
+      Max
+    </label>
+  </fieldset>
+
+  <app-import-export
+    [dim]="size()"
+    [values]="exportValues()"
+    [canExport]="form().values().valid()"
+    (imported)="onImported($event)"
+  />
+</div>

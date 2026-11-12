@@ -1,0 +1,27 @@
+<section class="step-one" [attr.aria-labelledby]="headingId()">
+  <h2 [id]="headingId()" tabindex="-1">Étape 1</h2>
+  <div class="tables">
+    <app-matrix-table
+      caption="Matrice initiale avec le minimum de chaque colonne"
+      [matrix]="result().original"
+      [colLabels]="colLabels()"
+      [rowLabels]="rowLabels()"
+      [bottomValues]="result().columnMins"
+    />
+    <app-matrix-table
+      caption="Matrice après soustraction des minimums de colonne, avec le minimum de chaque ligne"
+      [matrix]="result().afterColumns"
+      [colLabels]="colLabels()"
+      [rowLabels]="rowLabels()"
+      [sideValues]="result().rowMins"
+    />
+    <app-matrix-table
+      caption="Matrice réduite"
+      [matrix]="result().reduced"
+      [colLabels]="colLabels()"
+      [rowLabels]="rowLabels()"
+      [highlightZeros]="true"
+    />
+    <p class="bound">Coût min &gt;= {{ result().lowerBound }}</p>
+  </div>
+</section>

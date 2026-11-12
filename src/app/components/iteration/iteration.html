@@ -1,0 +1,48 @@
+<div class="steps">
+  @if (visible() >= 1) {
+    <section [attr.aria-labelledby]="headingIds()[0]">
+      <h2 [id]="headingIds()[0]" tabindex="-1">
+        Étape 2 <span class="sr-only">, itération {{ number() }}</span>
+      </h2>
+      <app-matrix-table
+        [caption]="'Encadrement des zéros, itération ' + number()"
+        [matrix]="iteration().framing"
+        [colLabels]="colLabels()"
+        [rowLabels]="rowLabels()"
+      />
+    </section>
+  }
+  @if (iteration().marking; as marking) {
+    @if (visible() >= 2) {
+      <section [attr.aria-labelledby]="headingIds()[1]">
+        <h2 [id]="headingIds()[1]" tabindex="-1">
+          Étape 3 <span class="sr-only">, itération {{ number() }}</span>
+        </h2>
+        <app-matrix-table
+          [caption]="'Marquage des lignes et colonnes, minimum non couvert ' + marking.min"
+          [matrix]="marking.matrix"
+          [colLabels]="colLabels()"
+          [rowLabels]="rowLabels()"
+          [markedRows]="marking.markedRows"
+          [markedCols]="marking.markedCols"
+        />
+      </section>
+    }
+    @if (iteration().adjusted; as adjusted) {
+      @if (visible() >= 3) {
+        <section [attr.aria-labelledby]="headingIds()[2]">
+          <h2 [id]="headingIds()[2]" tabindex="-1">
+            Étape 4 <span class="sr-only">, itération {{ number() }}</span>
+          </h2>
+          <app-matrix-table
+            [caption]="'Matrice ajustée, itération ' + number()"
+            [matrix]="adjusted"
+            [colLabels]="colLabels()"
+            [rowLabels]="rowLabels()"
+            [highlightZeros]="true"
+          />
+        </section>
+      }
+    }
+  }
+</div>

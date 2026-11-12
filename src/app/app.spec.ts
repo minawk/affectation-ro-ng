@@ -16,11 +16,11 @@ describe('App', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render the home page', async () => {
+  it('should render the affectation page', async () => {
     const fixture = TestBed.createComponent(App);
     await TestBed.inject(Router).navigateByUrl('/');
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Angular SSR POC');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Affectation RO');
   });
 });
