@@ -37,7 +37,12 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": ["localhost"]
+              "allowedHosts": [
+                "localhost",
+                "*.netlify.app",
+                "*.minawk.dev",
+                "affectation-ro.minawk.dev"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts"
@@ -45,6 +50,7 @@
           },
           "configurations": {
             "production": {
+              "outputMode": "static",
               "budgets": [
                 {
                   "type": "initial",

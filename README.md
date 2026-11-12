@@ -25,11 +25,16 @@ src/
 ```bash
 npm install
 npm start            # dev server with SSR, http://localhost:4200
-npm run build        # production build in dist/affectation-ro-ng
-npm run serve:ssr    # run the built server, http://localhost:4000
+npm run build        # static prerendered build in dist/affectation-ro-ng/browser
+npm run serve:static # preview the production build locally
 npm test             # unit tests (Vitest)
 ```
 
-All routes use `RenderMode.Server`. Change it in `app.routes.server.ts` to `Prerender` or `Client` per route.
+## Deployment (Netlify)
 
-Add allowed hostnames to `security.allowedHosts` in `angular.json` before deploying.
+The production build is static (`outputMode: "static"`, every route uses `RenderMode.Prerender`).
+`netlify.toml` runs `npm run build` and publishes `dist/affectation-ro-ng/browser`.
+
+`src/server.ts` uses the Netlify App Engine handler from `@netlify/angular-runtime`; it is only used by the dev server and at build time.
+
+To use a custom domain, add it to `security.allowedHosts` in `angular.json` and to `allowedHosts` in `src/server.ts`.

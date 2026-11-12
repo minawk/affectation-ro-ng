@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr": "node dist/affectation-ro-ng/server/server.mjs"
+    "serve:static": "npx --yes serve@14.2.4 dist/affectation-ro-ng/browser"
   },
   "private": true,
   "packageManager": "npm@11.13.0",
@@ -29,6 +29,7 @@
     "@angular/build": "^22.2.6",
     "@angular/cli": "^22.2.6",
     "@angular/compiler-cli": "^22.2.0",
+    "@netlify/angular-runtime": "^4.0.0",
     "@types/express": "^5.0.1",
     "@types/node": "^22.12.0",
     "jsdom": "^30.0.0",
